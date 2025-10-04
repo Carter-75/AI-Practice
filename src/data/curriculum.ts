@@ -1,3 +1,5 @@
+import htmlLessons from './lessons/html-lessons';
+
 export interface Lesson {
   id: string;
   title: string;
@@ -32,6 +34,33 @@ export interface Course {
   estimatedHours: number;
 }
 
+// Placeholder introductory lesson creator
+const createIntroLesson = (course: string, title: string, language: string): Lesson => ({
+  id: `${course}-1`,
+  title: `Introduction to ${title}`,
+  description: `Understanding ${title} and its role in web development.`,
+  difficulty: 'beginner',
+  estimatedTime: 30,
+  content: `
+# Introduction to ${title}
+
+This is an introductory lesson for ${title}. More comprehensive lessons will be added here.
+
+## What You'll Learn
+- Fundamentals of ${title}
+- Core concepts and syntax
+- Practical applications
+- Best practices
+
+## Getting Started
+This course will take you from beginner to advanced level with hands-on examples and exercises.
+
+**Note**: More detailed lessons are being added. Check the CURRICULUM_ROADMAP.md for the complete learning path.
+  `,
+  codeExample: `// ${title} example code will be shown here`,
+  language,
+});
+
 export const curriculum: Course[] = [
   {
     id: 'html',
@@ -39,426 +68,9 @@ export const curriculum: Course[] = [
     description: 'Learn the foundation of web development with HTML. Master semantic markup, accessibility, and modern HTML5 features.',
     icon: '🌐',
     color: '#e44d26',
-    totalLessons: 25,
-    estimatedHours: 12,
-    lessons: [
-      {
-        id: 'html-1',
-        title: 'Introduction to HTML',
-        description: 'What is HTML and why is it important for web development?',
-        difficulty: 'beginner',
-        estimatedTime: 30,
-        content: `
-# Introduction to HTML
-
-HTML (HyperText Markup Language) is the standard markup language for creating web pages. It describes the structure and content of a web page using a series of elements.
-
-## What You'll Learn
-- What HTML is and why it's essential
-- The basic structure of an HTML document
-- How browsers interpret HTML
-- The relationship between HTML, CSS, and JavaScript
-
-## Key Concepts
-1. **Markup Language**: HTML uses tags to mark up content
-2. **Elements**: The building blocks of HTML documents
-3. **Attributes**: Additional information about elements
-4. **Semantic Meaning**: HTML should describe the meaning of content, not just appearance
-
-## Why HTML Matters
-- It's the foundation of all web content
-- Provides structure and meaning to content
-- Enables accessibility for screen readers and other assistive technologies
-- Forms the base upon which CSS and JavaScript operate
-        `,
-        codeExample: `<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My First HTML Page</title>
-</head>
-<body>
-    <h1>Welcome to HTML!</h1>
-    <p>This is my first HTML document.</p>
-</body>
-</html>`,
-        language: 'html',
-        exercises: [
-          {
-            id: 'html-1-ex1',
-            title: 'Create Your First HTML Document',
-            description: 'Create a basic HTML document with a title and a paragraph.',
-            starterCode: `<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title><!-- Add your title here --></title>
-</head>
-<body>
-    <!-- Add your content here -->
-</body>
-</html>`,
-            solution: `<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>My Learning Journey</title>
-</head>
-<body>
-    <h1>Hello, World!</h1>
-    <p>I'm learning HTML and this is my first webpage!</p>
-</body>
-</html>`,
-            language: 'html',
-            hints: [
-              'The title goes between the <title> tags in the head section',
-              'Use <h1> for the main heading',
-              'Use <p> for paragraphs of text'
-            ]
-          }
-        ]
-      },
-      {
-        id: 'html-2',
-        title: 'HTML Document Structure',
-        description: 'Understanding the anatomy of an HTML document and essential tags.',
-        difficulty: 'beginner',
-        estimatedTime: 45,
-        content: `
-# HTML Document Structure
-
-Every HTML document follows a specific structure that browsers expect. Let's break down each part:
-
-## The DOCTYPE Declaration
-\`<!DOCTYPE html>\` tells the browser this is an HTML5 document.
-
-## The HTML Element
-The \`<html>\` element is the root element that contains all other elements.
-
-## The Head Section
-The \`<head>\` contains metadata about the document:
-- \`<meta>\` tags for character encoding and viewport settings
-- \`<title>\` for the page title (shown in browser tabs)
-- Links to CSS files and other resources
-
-## The Body Section
-The \`<body>\` contains all the visible content of the webpage.
-
-## Essential Meta Tags
-- \`charset="UTF-8"\`: Ensures proper character encoding
-- \`viewport\`: Makes your site mobile-friendly
-        `,
-        codeExample: `<!DOCTYPE html>
-<html lang="en">
-<head>
-    <!-- Meta information -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A comprehensive HTML learning resource">
-    
-    <!-- Page title -->
-    <title>HTML Document Structure</title>
-</head>
-<body>
-    <!-- All visible content goes here -->
-    <h1>Understanding HTML Structure</h1>
-    <p>This is the body of the document where all visible content lives.</p>
-</body>
-</html>`,
-        language: 'html'
-      },
-      {
-        id: 'html-3',
-        title: 'HTML Elements and Tags',
-        description: 'Learn about the most important HTML elements and how to use them.',
-        difficulty: 'beginner',
-        estimatedTime: 45,
-        content: `
-# HTML Elements and Tags
-
-HTML elements are the building blocks of web pages. Each element serves a specific purpose and provides structure or meaning to content.
-
-## Text Elements
-- \`<h1>\` to \`<h6>\`: Headings in order of importance
-- \`<p>\`: Paragraphs of text
-- \`<span>\`: Inline text container
-- \`<strong>\`: Important text (bold)
-- \`<em>\`: Emphasized text (italic)
-
-## List Elements
-- \`<ul>\`: Unordered (bulleted) lists
-- \`<ol>\`: Ordered (numbered) lists
-- \`<li>\`: List items
-
-## Link Elements
-- \`<a>\`: Anchors/links to other pages or sections
-- \`href\` attribute specifies the destination
-
-## Image Elements
-- \`<img>\`: Displays images
-- \`src\` attribute specifies the image source
-- \`alt\` attribute provides alternative text
-
-## Container Elements
-- \`<div>\`: Block-level container
-- \`<section>\`: Thematic grouping of content
-- \`<article>\`: Standalone piece of content
-        `,
-        codeExample: `<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>HTML Elements Example</title>
-</head>
-<body>
-    <!-- Headings -->
-    <h1>Main Heading</h1>
-    <h2>Subheading</h2>
-    
-    <!-- Paragraph -->
-    <p>This is a paragraph with <strong>bold text</strong> and <em>italic text</em>.</p>
-    
-    <!-- Lists -->
-    <h3>Unordered List:</h3>
-    <ul>
-        <li>First item</li>
-        <li>Second item</li>
-        <li>Third item</li>
-    </ul>
-    
-    <h3>Ordered List:</h3>
-    <ol>
-        <li>Step one</li>
-        <li>Step two</li>
-        <li>Step three</li>
-    </ol>
-    
-    <!-- Link -->
-    <p>Visit <a href="https://www.example.com">this link</a> for more information.</p>
-    
-    <!-- Image -->
-    <img src="https://via.placeholder.com/300x200" alt="Placeholder image">
-    
-    <!-- Container -->
-    <div>
-        <p>This content is inside a div container.</p>
-    </div>
-</body>
-</html>`,
-        language: 'html',
-        exercises: [
-          {
-            id: 'html-3-ex1',
-            title: 'Create a Personal Bio Page',
-            description: 'Create an HTML page with your personal information using various elements.',
-            starterCode: `<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title><!-- Your name here --></title>
-</head>
-<body>
-    <!-- Create your bio here -->
-    
-</body>
-</html>`,
-            solution: `<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Alex Johnson - Developer</title>
-</head>
-<body>
-    <h1>Alex Johnson</h1>
-    <h2>Full Stack Developer</h2>
-    
-    <p>Hello! I'm a passionate developer with <strong>5 years of experience</strong> 
-    in web development. I love creating <em>user-friendly</em> applications.</p>
-    
-    <h3>Skills:</h3>
-    <ul>
-        <li>JavaScript</li>
-        <li>React</li>
-        <li>Node.js</li>
-        <li>Python</li>
-    </ul>
-    
-    <h3>Contact:</h3>
-    <p>Email: <a href="mailto:alex@example.com">alex@example.com</a></p>
-    <p>LinkedIn: <a href="https://linkedin.com/in/alexjohnson">Alex Johnson</a></p>
-    
-    <div>
-        <p>Thanks for visiting my page!</p>
-    </div>
-</body>
-</html>`,
-            language: 'html',
-            hints: [
-              'Use <h1> for your name as the main heading',
-              'Use <h2> for your job title or profession',
-              'Use <ul> and <li> for listing your skills',
-              'Use <a> tags with href attributes for email and social links'
-            ]
-          }
-        ]
-      },
-      {
-        id: 'html-4',
-        title: 'Forms and Input Elements',
-        description: 'Learn how to create interactive forms to collect user input.',
-        difficulty: 'beginner',
-        estimatedTime: 50,
-        content: `
-# Forms and Input Elements
-
-HTML forms allow users to input data and interact with web pages. Forms are essential for user registration, contact forms, surveys, and more.
-
-## The Form Element
-The \`<form>\` element contains all form controls and defines how the form data should be processed.
-
-## Input Types
-- \`<input type="text">\`: Single-line text input
-- \`<input type="email">\`: Email address input
-- \`<input type="password">\`: Password input (hidden text)
-- \`<input type="number">\`: Numeric input
-- \`<input type="checkbox">\`: Checkbox for multiple selections
-- \`<input type="radio">\`: Radio button for single selection
-- \`<input type="submit">\`: Submit button
-
-## Other Form Elements
-- \`<textarea>\`: Multi-line text input
-- \`<select>\` and \`<option>\`: Dropdown menus
-- \`<label>\`: Labels for form controls
-- \`<button>\`: Interactive buttons
-
-## Form Attributes
-- \`name\`: Identifies the input when form is submitted
-- \`id\`: Unique identifier for the element
-- \`required\`: Makes the field mandatory
-- \`placeholder\`: Hint text shown in empty fields
-        `,
-        codeExample: `<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Contact Form Example</title>
-</head>
-<body>
-    <h1>Contact Us</h1>
-    
-    <form action="#" method="POST">
-        <!-- Text inputs -->
-        <label for="name">Full Name:</label>
-        <input type="text" id="name" name="name" required placeholder="Enter your full name">
-        <br><br>
-        
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required placeholder="your.email@example.com">
-        <br><br>
-        
-        <!-- Textarea -->
-        <label for="message">Message:</label><br>
-        <textarea id="message" name="message" rows="4" cols="50" 
-                  placeholder="Type your message here..." required></textarea>
-        <br><br>
-        
-        <!-- Radio buttons -->
-        <p>How did you hear about us?</p>
-        <input type="radio" id="search" name="source" value="search">
-        <label for="search">Search Engine</label><br>
-        
-        <input type="radio" id="social" name="source" value="social">
-        <label for="social">Social Media</label><br>
-        
-        <input type="radio" id="friend" name="source" value="friend">
-        <label for="friend">Friend Referral</label><br><br>
-        
-        <!-- Checkbox -->
-        <input type="checkbox" id="newsletter" name="newsletter" value="yes">
-        <label for="newsletter">Subscribe to our newsletter</label><br><br>
-        
-        <!-- Submit button -->
-        <button type="submit">Send Message</button>
-    </form>
-</body>
-</html>`,
-        language: 'html',
-        exercises: [
-          {
-            id: 'html-4-ex1',
-            title: 'Build a Registration Form',
-            description: 'Create a user registration form with various input types.',
-            starterCode: `<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>User Registration</title>
-</head>
-<body>
-    <h1>Create Account</h1>
-    
-    <form>
-        <!-- Add form fields here -->
-        
-    </form>
-</body>
-</html>`,
-            solution: `<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>User Registration</title>
-</head>
-<body>
-    <h1>Create Account</h1>
-    
-    <form action="#" method="POST">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required>
-        <br><br>
-        
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-        <br><br>
-        
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
-        <br><br>
-        
-        <label for="age">Age:</label>
-        <input type="number" id="age" name="age" min="13" max="120">
-        <br><br>
-        
-        <label for="country">Country:</label>
-        <select id="country" name="country">
-            <option value="">Select Country</option>
-            <option value="us">United States</option>
-            <option value="ca">Canada</option>
-            <option value="uk">United Kingdom</option>
-            <option value="other">Other</option>
-        </select>
-        <br><br>
-        
-        <input type="checkbox" id="terms" name="terms" required>
-        <label for="terms">I agree to the terms and conditions</label>
-        <br><br>
-        
-        <button type="submit">Register</button>
-    </form>
-</body>
-</html>`,
-            language: 'html',
-            hints: [
-              'Use appropriate input types for different data (email, password, number)',
-              'Add labels for accessibility',
-              'Use the required attribute for mandatory fields',
-              'Include a dropdown <select> element with <option> elements'
-            ]
-          }
-        ]
-      }
-    ]
+    totalLessons: 15,
+    estimatedHours: 15,
+    lessons: htmlLessons
   },
   
   {
@@ -468,102 +80,18 @@ The \`<form>\` element contains all form controls and defines how the form data 
     icon: '🎨',
     color: '#1572b6',
     totalLessons: 30,
-    estimatedHours: 20,
+    estimatedHours: 25,
     lessons: [
-      {
-        id: 'css-1',
-        title: 'Introduction to CSS',
-        description: 'Learn what CSS is and how it styles web pages.',
-        difficulty: 'beginner',
-        estimatedTime: 30,
-        content: `
-# Introduction to CSS
-
-CSS (Cascading Style Sheets) is the language used to style HTML documents. While HTML provides structure and content, CSS controls the presentation, layout, and visual appearance.
-
-## What CSS Does
-- Controls colors, fonts, and text styling
-- Manages layout and positioning
-- Handles responsive design for different screen sizes
-- Creates animations and transitions
-- Controls spacing, borders, and backgrounds
-
-## CSS Syntax
-CSS uses selectors to target HTML elements and applies styles using properties and values.
-
-## The Three Ways to Add CSS
-1. **Inline CSS**: Directly in HTML elements
-2. **Internal CSS**: In the \`<style>\` tag within the HTML document
-3. **External CSS**: In separate .css files (recommended)
-
-## Why CSS Matters
-- Separates content from presentation
-- Enables consistent styling across multiple pages
-- Makes websites responsive and accessible
-- Improves user experience through better design
-        `,
-        codeExample: `/* CSS Syntax */
-selector {
-    property: value;
-    property: value;
-}
-
-/* Example: Styling a heading */
-h1 {
-    color: #333;
-    font-size: 2em;
-    text-align: center;
-}
-
-/* Example: Styling a paragraph */
-p {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    color: #666;
-}`,
-        language: 'css',
-        exercises: [
-          {
-            id: 'css-1-ex1',
-            title: 'Your First CSS Styles',
-            description: 'Add basic styles to an HTML document.',
-            starterCode: `<!DOCTYPE html>
-<html>
-<head>
-    <style>
-        /* Add your CSS here */
-    </style>
-</head>
-<body>
-    <h1>Welcome to CSS</h1>
-    <p>This paragraph needs some styling!</p>
-</body>
-</html>`,
-            solution: `<!DOCTYPE html>
-<html>
-<head>
-    <style>
-        h1 {
-            color: #2c5aa0;
-            text-align: center;
-        }
-        
-        p {
-            color: #333;
-            font-family: Arial, sans-serif;
-            font-size: 16px;
-        }
-    </style>
-</head>
-<body>
-    <h1>Welcome to CSS</h1>
-    <p>This paragraph needs some styling!</p>
-</body>
-</html>`,
-            language: 'html'
-          }
-        ]
-      }
+      createIntroLesson('css', 'CSS', 'css'),
+      // TODO: Add 29 more CSS lessons covering:
+      // - Selectors (basic and advanced)
+      // - Box Model
+      // - Flexbox and Grid
+      // - Responsive Design
+      // - Animations and Transitions
+      // - CSS Variables
+      // - Preprocessors (Sass/SCSS)
+      // See CURRICULUM_ROADMAP.md for full list
     ]
   },
 
@@ -576,64 +104,17 @@ p {
     totalLessons: 40,
     estimatedHours: 35,
     lessons: [
-      {
-        id: 'js-1',
-        title: 'Introduction to JavaScript',
-        description: 'Understanding JavaScript and its role in web development.',
-        difficulty: 'beginner',
-        estimatedTime: 30,
-        content: `
-# Introduction to JavaScript
-
-JavaScript is a powerful programming language that brings interactivity and dynamic behavior to web pages. Originally created for browsers, JavaScript now runs on servers, mobile apps, and desktop applications.
-
-## What JavaScript Does
-- Makes web pages interactive and responsive
-- Handles user events (clicks, form submissions, etc.)
-- Manipulates HTML and CSS dynamically
-- Communicates with servers to fetch data
-- Creates animations and visual effects
-
-## JavaScript vs Other Languages
-- **Interpreted**: Runs directly in browsers without compilation
-- **Dynamic**: Variables can change types during runtime
-- **Event-driven**: Responds to user actions and system events
-- **Flexible**: Supports multiple programming paradigms
-
-## Where JavaScript Runs
-- **Frontend**: In web browsers
-- **Backend**: On servers (Node.js)
-- **Mobile**: In mobile app frameworks
-- **Desktop**: In desktop applications
-
-## Key Concepts You'll Learn
-- Variables and data types
-- Functions and scope
-- Objects and arrays
-- DOM manipulation
-- Event handling
-- Asynchronous programming
-        `,
-        codeExample: `// Your first JavaScript code
-console.log("Hello, JavaScript!");
-
-// Variables
-let message = "Welcome to programming!";
-const year = 2024;
-
-// Function
-function greet(name) {
-    return "Hello, " + name + "!";
-}
-
-// Using the function
-let greeting = greet("World");
-console.log(greeting);
-
-// Interacting with HTML
-document.querySelector('h1').textContent = greeting;`,
-        language: 'javascript'
-      }
+      createIntroLesson('javascript', 'JavaScript', 'javascript'),
+      // TODO: Add 39 more JavaScript lessons covering:
+      // - Variables, Data Types, Operators
+      // - Functions and Scope
+      // - Arrays and Objects
+      // - DOM Manipulation
+      // - Events
+      // - Async Programming (Promises, Async/Await)
+      // - ES6+ Features
+      // - OOP and Functional Programming
+      // See CURRICULUM_ROADMAP.md for full list
     ]
   },
 
@@ -644,65 +125,17 @@ document.querySelector('h1').textContent = greeting;`,
     icon: '📘',
     color: '#3178c6',
     totalLessons: 25,
-    estimatedHours: 18,
+    estimatedHours: 20,
     lessons: [
-      {
-        id: 'ts-1',
-        title: 'Why TypeScript?',
-        description: 'Understanding the benefits of adding types to JavaScript.',
-        difficulty: 'intermediate',
-        estimatedTime: 30,
-        prerequisites: ['js-1'],
-        content: `
-# Why TypeScript?
-
-TypeScript is a superset of JavaScript that adds static type definitions. It helps catch errors at development time rather than runtime, making your code more reliable and maintainable.
-
-## Benefits of TypeScript
-- **Type Safety**: Catch errors before they reach production
-- **Better IDE Support**: Autocomplete, refactoring, and navigation
-- **Self-Documenting Code**: Types serve as inline documentation
-- **Easier Refactoring**: Confidence when changing code
-- **Enhanced Collaboration**: Clear interfaces between team members
-
-## TypeScript vs JavaScript
-- All JavaScript is valid TypeScript
-- TypeScript compiles to JavaScript
-- Optional type annotations
-- Advanced language features
-
-## When to Use TypeScript
-- Large applications
-- Team projects
-- When you want better tooling
-- For long-term maintainability
-        `,
-        codeExample: `// JavaScript
-function greet(name) {
-    return "Hello, " + name;
-}
-
-// TypeScript - with type annotations
-function greet(name: string): string {
-    return "Hello, " + name;
-}
-
-// TypeScript - interfaces
-interface User {
-    id: number;
-    name: string;
-    email: string;
-}
-
-function createUser(user: User): User {
-    return {
-        id: user.id,
-        name: user.name,
-        email: user.email
-    };
-}`,
-        language: 'typescript'
-      }
+      createIntroLesson('typescript', 'TypeScript', 'typescript'),
+      // TODO: Add 24 more TypeScript lessons covering:
+      // - Basic Types and Type Annotations
+      // - Interfaces and Type Aliases
+      // - Generics
+      // - Advanced Types
+      // - Decorators
+      // - TypeScript with React
+      // See CURRICULUM_ROADMAP.md for full list
     ]
   },
 
@@ -713,60 +146,18 @@ function createUser(user: User): User {
     icon: '⚛️',
     color: '#61dafb',
     totalLessons: 35,
-    estimatedHours: 25,
+    estimatedHours: 30,
     lessons: [
-      {
-        id: 'react-1',
-        title: 'What is React?',
-        description: 'Understanding React and component-based architecture.',
-        difficulty: 'intermediate',
-        estimatedTime: 30,
-        prerequisites: ['js-1'],
-        content: `
-# What is React?
-
-React is a JavaScript library for building user interfaces, especially web applications. Created by Facebook, it revolutionized how we think about building interactive UIs through a component-based architecture.
-
-## Key Concepts
-- **Components**: Reusable pieces of UI
-- **JSX**: JavaScript syntax extension for writing HTML-like code
-- **Virtual DOM**: Efficient updating of the actual DOM
-- **State Management**: Managing dynamic data in components
-- **Props**: Passing data between components
-
-## Why React?
-- **Component Reusability**: Write once, use anywhere
-- **Declarative**: Describe what the UI should look like
-- **Efficient Updates**: Only re-render what changes
-- **Large Ecosystem**: Massive community and tooling
-- **Industry Standard**: Used by major companies worldwide
-
-## React Philosophy
-- UI as a function of state
-- Composition over inheritance
-- One-way data flow
-- "Learn once, write anywhere"
-        `,
-        codeExample: `import React from 'react';
-
-// A simple React component
-function Welcome(props) {
-    return <h1>Hello, {props.name}!</h1>;
-}
-
-// Using the component
-function App() {
-    return (
-        <div>
-            <Welcome name="World" />
-            <Welcome name="React" />
-        </div>
-    );
-}
-
-export default App;`,
-        language: 'javascript'
-      }
+      createIntroLesson('react', 'React', 'javascript'),
+      // TODO: Add 34 more React lessons covering:
+      // - Components and Props
+      // - State and Lifecycle
+      // - Hooks (useState, useEffect, useContext, etc.)
+      // - React Router
+      // - State Management (Redux, Zustand)
+      // - Performance Optimization
+      // - Testing
+      // See CURRICULUM_ROADMAP.md for full list
     ]
   },
 
@@ -776,80 +167,20 @@ export default App;`,
     description: 'Create stunning 3D graphics and animations in the browser.',
     icon: '🎲',
     color: '#000000',
-    totalLessons: 20,
-    estimatedHours: 15,
+    totalLessons: 25,
+    estimatedHours: 20,
     lessons: [
-      {
-        id: 'three-1',
-        title: 'Introduction to 3D Graphics',
-        description: 'Understanding 3D concepts and Three.js basics.',
-        difficulty: 'intermediate',
-        estimatedTime: 45,
-        prerequisites: ['js-1'],
-        content: `
-# Introduction to 3D Graphics with Three.js
-
-Three.js is a JavaScript library that makes creating 3D graphics in web browsers accessible and fun. It abstracts the complexity of WebGL while providing powerful 3D capabilities.
-
-## 3D Graphics Fundamentals
-- **Scene**: The 3D world container
-- **Camera**: Your viewpoint into the 3D world  
-- **Renderer**: Converts 3D scenes into 2D images
-- **Geometry**: The shape/structure of 3D objects
-- **Material**: The surface appearance of objects
-- **Lighting**: How objects are illuminated
-
-## What You Can Build
-- Interactive 3D websites
-- Data visualizations
-- Games and simulations
-- Product showcases
-- Architectural walkthroughs
-- Scientific visualizations
-
-## Three.js Advantages
-- Cross-browser compatibility
-- Large community and resources
-- Extensive documentation
-- Regular updates and improvements
-- Integration with web technologies
-        `,
-        codeExample: `import * as THREE from 'three';
-
-// Create scene, camera, and renderer
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-const renderer = new THREE.WebGLRenderer();
-
-// Set up the renderer
-renderer.setSize(window.innerWidth, window.innerHeight);
-document.body.appendChild(renderer.domElement);
-
-// Create a cube
-const geometry = new THREE.BoxGeometry();
-const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-const cube = new THREE.Mesh(geometry, material);
-
-// Add cube to scene
-scene.add(cube);
-
-// Position camera
-camera.position.z = 5;
-
-// Render loop
-function animate() {
-    requestAnimationFrame(animate);
-    
-    // Rotate the cube
-    cube.rotation.x += 0.01;
-    cube.rotation.y += 0.01;
-    
-    renderer.render(scene, camera);
-}
-
-animate();`,
-        language: 'javascript'
-      }
+      createIntroLesson('threejs', 'Three.js', 'javascript'),
+      // TODO: Add 24 more Three.js lessons covering:
+      // - Scenes, Cameras, and Renderers
+      // - Geometries and Materials
+      // - Lighting and Shadows
+      // - Textures and Mapping
+      // - Animations
+      // - Loading 3D Models
+      // - Shaders
+      // - Physics and Interactions
+      // See CURRICULUM_ROADMAP.md for full list
     ]
   },
 
@@ -859,92 +190,22 @@ animate();`,
     description: 'Learn programming concepts with Python\'s clean and readable syntax.',
     icon: '🐍',
     color: '#3776ab',
-    totalLessons: 45,
-    estimatedHours: 30,
+    totalLessons: 40,
+    estimatedHours: 35,
     lessons: [
-      {
-        id: 'python-1',
-        title: 'Welcome to Python',
-        description: 'Introduction to Python programming language and its philosophy.',
-        difficulty: 'beginner',
-        estimatedTime: 30,
-        content: `
-# Welcome to Python
-
-Python is a high-level, interpreted programming language known for its simplicity and readability. Created by Guido van Rossum in 1991, Python emphasizes code readability and allows developers to express concepts in fewer lines of code.
-
-## The Zen of Python
-- Beautiful is better than ugly
-- Explicit is better than implicit
-- Simple is better than complex
-- Readability counts
-- There should be one obvious way to do it
-
-## Why Learn Python?
-- **Easy to Learn**: Clean and readable syntax
-- **Versatile**: Web development, data science, AI, automation
-- **Large Community**: Extensive libraries and frameworks
-- **Industry Demand**: High demand in job market
-- **Great for Beginners**: Excellent first programming language
-
-## What You Can Build with Python
-- Web applications (Django, Flask)
-- Data analysis and visualization
-- Machine learning models
-- Automation scripts
-- Desktop applications
-- Games and multimedia applications
-
-## Python Philosophy
-Python emphasizes code readability and simplicity. The language's design philosophy is summed up in "The Zen of Python" - a collection of principles for writing computer programs.
-        `,
-        codeExample: `# Your first Python program
-print("Hello, World!")
-
-# Variables and basic operations
-name = "Python"
-version = 3.9
-is_awesome = True
-
-print(f"Welcome to {name} {version}!")
-print(f"Is Python awesome? {is_awesome}")
-
-# A simple function
-def greet(name):
-    return f"Hello, {name}! Welcome to Python programming."
-
-# Using the function
-message = greet("Learner")
-print(message)`,
-        language: 'python',
-        exercises: [
-          {
-            id: 'python-1-ex1',
-            title: 'Your First Python Program',
-            description: 'Write a program that introduces yourself.',
-            starterCode: `# Write your first Python program here
-# Create variables for your name, age, and favorite hobby
-# Then print an introduction message
-
-`,
-            solution: `# My first Python program
-name = "Alex"
-age = 25
-hobby = "coding"
-
-print(f"Hi! My name is {name}")
-print(f"I am {age} years old")
-print(f"My favorite hobby is {hobby}")
-print("I'm excited to learn Python!")`,
-            language: 'python',
-            hints: [
-              'Use variables to store your information',
-              'Use print() to display messages',
-              'Try using f-strings for formatting: f"Hello, {name}"'
-            ]
-          }
-        ]
-      }
+      createIntroLesson('python', 'Python', 'python'),
+      // TODO: Add 39 more Python lessons covering:
+      // - Variables and Data Types
+      // - Control Flow and Loops
+      // - Functions and Modules
+      // - Data Structures (Lists, Dicts, Sets, Tuples)
+      // - Object-Oriented Programming
+      // - File I/O
+      // - Error Handling
+      // - Web Development (Flask, Django)
+      // - Working with APIs
+      // - Testing
+      // See CURRICULUM_ROADMAP.md for full list
     ]
   }
 ];
