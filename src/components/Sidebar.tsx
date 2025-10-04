@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Course } from '../data/curriculum';
-import { UserProgress } from '../utils/storage';
+import type { Course } from '../data/curriculum';
+import type { UserProgress } from '../utils/storage';
 
 interface SidebarProps {
   open: boolean;

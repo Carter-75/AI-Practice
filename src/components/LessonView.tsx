@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate, Link } from 'react-router-dom';
-import { ChevronLeft, ChevronRight, CheckCircle, Play, RotateCcw } from 'lucide-react';
+import { useParams, Link } from 'react-router-dom';
+import { ChevronLeft, ChevronRight, CheckCircle } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
-import { Course } from '../data/curriculum';
-import { UserProgress } from '../utils/storage';
+import type { Course } from '../data/curriculum';
+import type { UserProgress } from '../utils/storage';
 import CodePlayground from './CodePlayground';
 
 interface LessonViewProps {
@@ -22,7 +22,7 @@ const LessonView: React.FC<LessonViewProps> = ({
   onTimeSpent 
 }) => {
   const { courseId, lessonId } = useParams<{ courseId: string; lessonId: string }>();
-  const navigate = useNavigate();
+  // const navigate = useNavigate(); // Removed unused
   const [startTime] = useState(Date.now());
 
   const course = courses.find(c => c.id === courseId);

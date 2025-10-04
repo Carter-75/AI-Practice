@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Play, Clock, Trophy, Target } from 'lucide-react';
-import { Course } from '../data/curriculum';
-import { UserProgress } from '../utils/storage';
+import type { Course } from '../data/curriculum';
+import type { UserProgress } from '../utils/storage';
 
 interface DashboardProps {
   courses: Course[];
@@ -10,7 +10,7 @@ interface DashboardProps {
   onContinueLearning: () => void;
 }
 
-const Dashboard: React.FC<DashboardProps> = ({ courses, progress, onContinueLearning }) => {
+const Dashboard: React.FC<DashboardProps> = ({ courses, progress, onContinueLearning: _onContinueLearning }) => {
   const getTotalStats = () => {
     const totalLessons = courses.reduce((sum, course) => sum + course.lessons.length, 0);
     const completedLessons = progress.completedLessons.length;

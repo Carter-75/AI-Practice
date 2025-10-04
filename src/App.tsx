@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import { ProgressStorage, UserProgress } from './utils/storage';
+import { ProgressStorage, type UserProgress } from './utils/storage';
 import curriculum from './data/curriculum';
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
@@ -24,9 +24,7 @@ function App() {
     document.documentElement.setAttribute('data-theme', progress.preferences.theme);
   }, [progress.preferences.theme]);
 
-  const updateProgress = (updates: Partial<UserProgress>) => {
-    setProgress(prev => ({ ...prev, ...updates }));
-  };
+  // Removed unused updateProgress function
 
   const markLessonComplete = (lessonId: string) => {
     setProgress(prev => ({
@@ -74,7 +72,7 @@ function App() {
             open={sidebarOpen}
             courses={curriculum}
             progress={progress}
-            onCourseSelect={(courseId) => {
+            onCourseSelect={(_courseId) => {
               setSidebarOpen(false);
             }}
           />

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Download, Upload, RotateCcw, Sun, Moon } from 'lucide-react';
-import { UserProgress } from '../utils/storage';
+import type { UserProgress } from '../utils/storage';
 
 interface SettingsViewProps {
   progress: UserProgress;

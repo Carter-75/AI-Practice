@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, Settings, Sun, Moon } from 'lucide-react';
-import { UserProgress } from '../utils/storage';
+import type { UserProgress } from '../utils/storage';
 
 interface HeaderProps {
   sidebarOpen: boolean;

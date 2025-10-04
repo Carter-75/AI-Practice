@@ -1,8 +1,8 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Play, Clock, CheckCircle, Circle } from 'lucide-react';
-import { Course } from '../data/curriculum';
-import { UserProgress } from '../utils/storage';
+import type { Course } from '../data/curriculum';
+import type { UserProgress } from '../utils/storage';
 
 interface CourseViewProps {
   courses: Course[];
