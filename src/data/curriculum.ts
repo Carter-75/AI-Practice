@@ -167,8 +167,297 @@ The \`<body>\` contains all the visible content of the webpage.
 </body>
 </html>`,
         language: 'html'
+      },
+      {
+        id: 'html-3',
+        title: 'HTML Elements and Tags',
+        description: 'Learn about the most important HTML elements and how to use them.',
+        difficulty: 'beginner',
+        estimatedTime: 45,
+        content: `
+# HTML Elements and Tags
+
+HTML elements are the building blocks of web pages. Each element serves a specific purpose and provides structure or meaning to content.
+
+## Text Elements
+- \`<h1>\` to \`<h6>\`: Headings in order of importance
+- \`<p>\`: Paragraphs of text
+- \`<span>\`: Inline text container
+- \`<strong>\`: Important text (bold)
+- \`<em>\`: Emphasized text (italic)
+
+## List Elements
+- \`<ul>\`: Unordered (bulleted) lists
+- \`<ol>\`: Ordered (numbered) lists
+- \`<li>\`: List items
+
+## Link Elements
+- \`<a>\`: Anchors/links to other pages or sections
+- \`href\` attribute specifies the destination
+
+## Image Elements
+- \`<img>\`: Displays images
+- \`src\` attribute specifies the image source
+- \`alt\` attribute provides alternative text
+
+## Container Elements
+- \`<div>\`: Block-level container
+- \`<section>\`: Thematic grouping of content
+- \`<article>\`: Standalone piece of content
+        `,
+        codeExample: `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML Elements Example</title>
+</head>
+<body>
+    <!-- Headings -->
+    <h1>Main Heading</h1>
+    <h2>Subheading</h2>
+    
+    <!-- Paragraph -->
+    <p>This is a paragraph with <strong>bold text</strong> and <em>italic text</em>.</p>
+    
+    <!-- Lists -->
+    <h3>Unordered List:</h3>
+    <ul>
+        <li>First item</li>
+        <li>Second item</li>
+        <li>Third item</li>
+    </ul>
+    
+    <h3>Ordered List:</h3>
+    <ol>
+        <li>Step one</li>
+        <li>Step two</li>
+        <li>Step three</li>
+    </ol>
+    
+    <!-- Link -->
+    <p>Visit <a href="https://www.example.com">this link</a> for more information.</p>
+    
+    <!-- Image -->
+    <img src="https://via.placeholder.com/300x200" alt="Placeholder image">
+    
+    <!-- Container -->
+    <div>
+        <p>This content is inside a div container.</p>
+    </div>
+</body>
+</html>`,
+        language: 'html',
+        exercises: [
+          {
+            id: 'html-3-ex1',
+            title: 'Create a Personal Bio Page',
+            description: 'Create an HTML page with your personal information using various elements.',
+            starterCode: `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><!-- Your name here --></title>
+</head>
+<body>
+    <!-- Create your bio here -->
+    
+</body>
+</html>`,
+            solution: `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Alex Johnson - Developer</title>
+</head>
+<body>
+    <h1>Alex Johnson</h1>
+    <h2>Full Stack Developer</h2>
+    
+    <p>Hello! I'm a passionate developer with <strong>5 years of experience</strong> 
+    in web development. I love creating <em>user-friendly</em> applications.</p>
+    
+    <h3>Skills:</h3>
+    <ul>
+        <li>JavaScript</li>
+        <li>React</li>
+        <li>Node.js</li>
+        <li>Python</li>
+    </ul>
+    
+    <h3>Contact:</h3>
+    <p>Email: <a href="mailto:alex@example.com">alex@example.com</a></p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/alexjohnson">Alex Johnson</a></p>
+    
+    <div>
+        <p>Thanks for visiting my page!</p>
+    </div>
+</body>
+</html>`,
+            language: 'html',
+            hints: [
+              'Use <h1> for your name as the main heading',
+              'Use <h2> for your job title or profession',
+              'Use <ul> and <li> for listing your skills',
+              'Use <a> tags with href attributes for email and social links'
+            ]
+          }
+        ]
+      },
+      {
+        id: 'html-4',
+        title: 'Forms and Input Elements',
+        description: 'Learn how to create interactive forms to collect user input.',
+        difficulty: 'beginner',
+        estimatedTime: 50,
+        content: `
+# Forms and Input Elements
+
+HTML forms allow users to input data and interact with web pages. Forms are essential for user registration, contact forms, surveys, and more.
+
+## The Form Element
+The \`<form>\` element contains all form controls and defines how the form data should be processed.
+
+## Input Types
+- \`<input type="text">\`: Single-line text input
+- \`<input type="email">\`: Email address input
+- \`<input type="password">\`: Password input (hidden text)
+- \`<input type="number">\`: Numeric input
+- \`<input type="checkbox">\`: Checkbox for multiple selections
+- \`<input type="radio">\`: Radio button for single selection
+- \`<input type="submit">\`: Submit button
+
+## Other Form Elements
+- \`<textarea>\`: Multi-line text input
+- \`<select>\` and \`<option>\`: Dropdown menus
+- \`<label>\`: Labels for form controls
+- \`<button>\`: Interactive buttons
+
+## Form Attributes
+- \`name\`: Identifies the input when form is submitted
+- \`id\`: Unique identifier for the element
+- \`required\`: Makes the field mandatory
+- \`placeholder\`: Hint text shown in empty fields
+        `,
+        codeExample: `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Form Example</title>
+</head>
+<body>
+    <h1>Contact Us</h1>
+    
+    <form action="#" method="POST">
+        <!-- Text inputs -->
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required placeholder="Enter your full name">
+        <br><br>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+        <br><br>
+        
+        <!-- Textarea -->
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" rows="4" cols="50" 
+                  placeholder="Type your message here..." required></textarea>
+        <br><br>
+        
+        <!-- Radio buttons -->
+        <p>How did you hear about us?</p>
+        <input type="radio" id="search" name="source" value="search">
+        <label for="search">Search Engine</label><br>
+        
+        <input type="radio" id="social" name="source" value="social">
+        <label for="social">Social Media</label><br>
+        
+        <input type="radio" id="friend" name="source" value="friend">
+        <label for="friend">Friend Referral</label><br><br>
+        
+        <!-- Checkbox -->
+        <input type="checkbox" id="newsletter" name="newsletter" value="yes">
+        <label for="newsletter">Subscribe to our newsletter</label><br><br>
+        
+        <!-- Submit button -->
+        <button type="submit">Send Message</button>
+    </form>
+</body>
+</html>`,
+        language: 'html',
+        exercises: [
+          {
+            id: 'html-4-ex1',
+            title: 'Build a Registration Form',
+            description: 'Create a user registration form with various input types.',
+            starterCode: `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Registration</title>
+</head>
+<body>
+    <h1>Create Account</h1>
+    
+    <form>
+        <!-- Add form fields here -->
+        
+    </form>
+</body>
+</html>`,
+            solution: `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Registration</title>
+</head>
+<body>
+    <h1>Create Account</h1>
+    
+    <form action="#" method="POST">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <br><br>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br><br>
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <br><br>
+        
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" min="13" max="120">
+        <br><br>
+        
+        <label for="country">Country:</label>
+        <select id="country" name="country">
+            <option value="">Select Country</option>
+            <option value="us">United States</option>
+            <option value="ca">Canada</option>
+            <option value="uk">United Kingdom</option>
+            <option value="other">Other</option>
+        </select>
+        <br><br>
+        
+        <input type="checkbox" id="terms" name="terms" required>
+        <label for="terms">I agree to the terms and conditions</label>
+        <br><br>
+        
+        <button type="submit">Register</button>
+    </form>
+</body>
+</html>`,
+            language: 'html',
+            hints: [
+              'Use appropriate input types for different data (email, password, number)',
+              'Add labels for accessibility',
+              'Use the required attribute for mandatory fields',
+              'Include a dropdown <select> element with <option> elements'
+            ]
+          }
+        ]
       }
-      // More HTML lessons will be added incrementally
     ]
   },
   
