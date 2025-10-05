@@ -39,16 +39,16 @@
 
 ## 📋 Lesson Count by Technology
 
-| Technology | Completed | Planned | Total | Progress |
-|------------|-----------|---------|-------|----------|
-| HTML       | 10        | 5       | 15    | 67%      |
-| CSS        | 1         | 29      | 30    | 3%       |
-| JavaScript | 1         | 39      | 40    | 3%       |
-| TypeScript | 1         | 24      | 25    | 4%       |
-| React      | 1         | 34      | 35    | 3%       |
-| Three.js   | 1         | 24      | 25    | 4%       |
-| Python     | 1         | 39      | 40    | 3%       |
-| **TOTAL**  | **16**    | **194** | **210** | **8%** |
+| Technology | Completed | Remaining | Total | Progress |
+|------------|-----------|-----------|-------|----------|
+| HTML       | 10        | 5         | 15    | 67%      |
+| CSS        | 7         | 23        | 30    | 23%      |
+| JavaScript | 10        | 30        | 40    | 25%      |
+| TypeScript | 1         | 24        | 25    | 4%       |
+| React      | 1         | 34        | 35    | 3%       |
+| Three.js   | 1         | 24        | 25    | 4%       |
+| Python     | 1         | 39        | 40    | 3%       |
+| **TOTAL**  | **31**    | **179**   | **210** | **15%** |
 
 ---
 
@@ -142,15 +142,37 @@
 - Web Components
 - Best Practices and Standards
 
-### CSS (29 lessons needed)
-**Beginner**: Selectors, Box Model, Typography, Colors, Display, Position, Float
-**Intermediate**: Flexbox, Grid, Responsive Design, Transitions, Animations, Transforms
-**Advanced**: Variables, Calc(), Filters, Gradients, Preprocessors, Architecture, Modern CSS
+### CSS (23 lessons remaining)
+✅ **Completed (7 lessons)**:
+- css-1: Introduction to CSS
+- css-2: CSS Selectors - Basic (element, class, ID, combinators)
+- css-3: CSS Selectors - Advanced (pseudo-classes, pseudo-elements, attribute selectors)
+- css-4: CSS Box Model (content, padding, border, margin, box-sizing)
+- css-5: CSS Typography and Fonts (font properties, web fonts, text styling)
+- css-6: CSS Flexbox (all properties, alignment, wrapping, responsive layouts)
+- css-7: CSS Grid (grid template, areas, alignment, responsive grids)
 
-### JavaScript (39 lessons needed)
-**Beginner**: Variables, Data Types, Operators, Strings, Numbers, Conditionals, Loops, Functions, Arrays, Objects
-**Intermediate**: DOM Manipulation, Events, Scope, Closures, This, Prototypes, Classes, Modules, ES6+ Features
-**Advanced**: Async Programming, Fetch API, Error Handling, RegEx, Storage, Performance, Design Patterns, Testing
+🔲 **Remaining (23 lessons needed)**:
+**Beginner**: Colors/Backgrounds (1 lesson), Borders/Margins/Padding (1 lesson), Display/Visibility (1 lesson), Position (1 lesson), Float/Clear (1 lesson)
+**Intermediate**: Responsive Design (2 lessons), Responsive Units (1 lesson), Transitions (1 lesson), 2D Transforms (1 lesson), 3D Transforms (1 lesson), Animations (1 lesson)
+**Advanced**: Variables (1 lesson), Calc() (1 lesson), Filters (1 lesson), Gradients (1 lesson), Shadows (1 lesson), Preprocessors (1 lesson), Architecture (1 lesson), Performance (2 lessons), Modern CSS (2 lessons)
+
+### JavaScript (30 lessons remaining)
+✅ **Completed (10 lessons)**:
+- js-1: Introduction to JavaScript
+- js-2: Variables and Data Types (let, const, var, all types)
+- js-3: Operators (arithmetic, comparison, logical, ternary, nullish, optional chaining)
+- js-4: Strings and String Methods (all methods with examples)
+- js-5: Conditionals (if/else, switch, truthy/falsy, guard clauses)
+- js-6: Functions (declarations, expressions, arrow, parameters, closures, IIFE, recursion)
+- js-7: Arrays - Basics (creation, access, manipulation, multi-dimensional)
+- js-8: Array Methods (map, filter, reduce, forEach, find, every, some, method chaining)
+- js-9: Objects (creation, properties, methods, this, destructuring, Object methods)
+- js-10: Loops (for, while, do-while, for...of, for...in, break, continue)
+
+🔲 **Remaining (30 lessons needed)**:
+**Intermediate**: DOM Manipulation (5 lessons), Events (5 lessons), Scope/Closures (2 lessons), This keyword (1 lesson), Prototypes (2 lessons), Classes (2 lessons), Modules (2 lessons), ES6+ Features (5 lessons)
+**Advanced**: Async Programming (3 lessons), Fetch API (1 lesson), Error Handling (1 lesson), RegEx (1 lesson), Storage (1 lesson), Performance (1 lesson), Design Patterns (2 lessons), Testing (1 lesson)
 
 ### TypeScript (24 lessons needed)
 **Beginner**: Setup, Basic Types, Arrays, Tuples, Enums, Functions, Interfaces, Type Aliases, Unions, Literals
@@ -310,7 +332,7 @@ We need help creating the remaining 194 lessons! Each lesson should follow the t
 
 ---
 
-Last Updated: 2024-10-04
+Last Updated: 2024-10-05
 Status: Active Development
-Progress: 16/210 lessons (8%)
+Progress: 31/210 lessons (15%)
 Repository: https://github.com/Carter-75/AI-Practice
