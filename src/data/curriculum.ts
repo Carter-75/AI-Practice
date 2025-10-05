@@ -1,4 +1,5 @@
 import htmlLessons from './lessons/html-lessons';
+import cssLessons from './lessons/css-lessons';
 
 export interface Lesson {
   id: string;
@@ -81,9 +82,8 @@ export const curriculum: Course[] = [
     color: '#1572b6',
     totalLessons: 30,
     estimatedHours: 25,
-    lessons: [
-      createIntroLesson('css', 'CSS', 'css'),
-      // TODO: Add 29 more CSS lessons covering:
+    lessons: cssLessons
+      // TODO: Add 25 more CSS lessons covering:
       // - Selectors (basic and advanced)
       // - Box Model
       // - Flexbox and Grid
